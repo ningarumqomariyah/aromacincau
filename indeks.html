@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CincauKu — Aroma Cincau Bubuk Alami</title>
+    <style>
+        /* ===== RESET & GLOBAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f0e8;
+            color: #3b2e1e;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== WARNA UTAMA ===== */
+        :root {
+            --hijau-tua: #2d4a2d;
+            --hijau-coklat: #4a6b3a;
+            --coklat-tua: #5c4033;
+            --coklat-muda: #8b6f4e;
+            --krem: #f5f0e8;
+            --emas: #c9a86c;
+        }
+
+        /* ===== HEADER / NAVBAR ===== */
+        header {
+            background: linear-gradient(135deg, #2d4a2d, #4a6b3a, #5c4033);
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #c9a86c;
+        }
+
+        .logo .icon {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(201, 168, 108, 0.3);
+            color: #c9a86c;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #3b2e1e, #2d4a2d, #4a6b3a);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 20rem;
+            opacity: 0.05;
+            top: -50px;
+            right: -50px;
+            transform: rotate(20deg);
+        }
+
+        .hero::after {
+            content: '🍃';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            bottom: -50px;
+            left: -50px;
+            transform: rotate(-15deg);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span {
+            color: #c9a86c;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, #c9a86c, #8b6f4e);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(201, 168, 108, 0.4);
+            position: relative;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 168, 108, 0.6);
+        }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 60px 0 15px;
+            color: #2d4a2d;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #c9a86c, #4a6b3a);
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #5c4033;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== PRODUK UNGGULAN ===== */
+        .produk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .produk-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(45, 74, 45, 0.12);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(74, 107, 58, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produk-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(45, 74, 45, 0.25);
+        }
+
+        .produk-img {
+            height: 220px;
+            background: linear-gradient(135deg, #4a6b3a, #8b6f4e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .produk-img .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #c9a86c;
+            color: #2d4a2d;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .produk-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produk-body h3 {
+            font-size: 1.3rem;
+            color: #2d4a2d;
+            margin-bottom: 8px;
+        }
+
+        .produk-body .deskripsi {
+            font-size: 0.95rem;
+            color: #5c4033;
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .produk-body .harga {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #4a6b3a;
+            margin-bottom: 5px;
+        }
+
+        .produk-body .harga small {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #8b6f4e;
+        }
+
+        .produk-body .pilihan {
+            font-size: 0.85rem;
+            color: #8b6f4e;
+            margin-bottom: 15px;
+            padding: 8px 12px;
+            background: #f5f0e8;
+            border-radius: 8px;
+            border-left: 3px solid #c9a86c;
+        }
+
+        .produk-body .btn-produk {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(135deg, #4a6b3a, #2d4a2d);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .produk-body .btn-produk:hover {
+            background: linear-gradient(135deg, #c9a86c, #8b6f4e);
+            color: #2d4a2d;
+        }
+
+        /* ===== TABEL UKURAN ===== */
+        .size-section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 25px rgba(45, 74, 45, 0.1);
+            margin-bottom: 60px;
+            border: 1px solid rgba(74, 107, 58, 0.1);
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .size-table thead {
+            background: linear-gradient(135deg, #2d4a2d, #4a6b3a);
+            color: #fff;
+        }
+
+        .size-table th {
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .size-table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e8e0d5;
+            vertical-align: middle;
+        }
+
+        .size-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .size-table tbody tr:hover {
+            background: #f5f0e8;
+        }
+
+        .size-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-table .harga-cell {
+            font-weight: 700;
+            color: #4a6b3a;
+            font-size: 1.05rem;
+        }
+
+        .size-table .stok {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .stok-tersedia {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .stok-terbatas {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .stok-habis {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        /* ===== BENTUK KEMASAN ===== */
+        .kemasan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .kemasan-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 22px;
+            text-align: center;
+            box-shadow: 0 4px 18px rgba(45, 74, 45, 0.1);
+            transition: all 0.35s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kemasan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4a6b3a, #c9a86c, #5c4033);
+        }
+
+        .kemasan-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(45, 74, 45, 0.2);
+            border-color: #c9a86c;
+        }
+
+        .kemasan-card .ikon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .kemasan-card h4 {
+            font-size: 1.15rem;
+            color: #2d4a2d;
+            margin-bottom: 8px;
+        }
+
+        .kemasan-card p {
+            font-size: 0.9rem;
+            color: #5c4033;
+            margin-bottom: 12px;
+        }
+
+        .kemasan-card .tag {
+            display: inline-block;
+            padding: 5px 14px;
+            background: #f5f0e8;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4a6b3a;
+            border: 1px solid #c9a86c;
+        }
+
+        /* ===== KEUNGGULAN ===== */
+        .keunggulan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .keunggulan-item {
+            text-align: center;
+            padding: 30px 18px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(45, 74, 45, 0.08);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid #4a6b3a;
+        }
+
+        .keunggulan-item:hover {
+            transform: translateY(-5px);
+            border-bottom-color: #c9a86c;
+            box-shadow: 0 10px 30px rgba(45, 74, 45, 0.15);
+        }
+
+        .keunggulan-item .ikon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .keunggulan-item h4 {
+            color: #2d4a2d;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .keunggulan-item p {
+            font-size: 0.88rem;
+            color: #5c4033;
+        }
+
+        /* ===== CTA / KONTAK ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #2d4a2d, #4a6b3a, #5c4033);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.06;
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .btn {
+            background: #c9a86c;
+            color: #2d4a2d;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .btn:hover {
+            background: #fff;
+            color: #2d4a2d;
+        }
+
+        .kontak-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .kontak-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #2d4a2d;
+            color: #e8e0d5;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .footer-content h4 {
+            color: #c9a86c;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content p,
+        .footer-content li {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content ul li a:hover {
+            color: #c9a86c;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(201, 168, 108, 0.3);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .size-table {
+                font-size: 0.8rem;
+            }
+
+            .size-table th,
+            .size-table td {
+                padding: 10px 8px;
+            }
+
+            .kontak-info {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .cta-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .produk-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kemasan-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .size-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <span class="icon">🌿</span>
+                Cincau<span>Ku</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#produk">Produk</a></li>
+                    <li><a href="#ukuran">Ukuran</a></li>
+                    <li><a href="#kemasan">Kemasan</a></li>
+                    <li><a href="#keunggulan">Keunggulan</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <h1>Aroma <span>Cincau</span> Bubuk Alami</h1>
+            <p>Dibuat dari daun cincau hitam pilihan yang dikeringkan, kemudian digiling menjadi bubuk halus. Menghadirkan aroma dan cita rasa autentik cincau dalam setiap sajian.</p>
+            <a href="#produk" class="btn">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- ===== PRODUK ===== -->
+    <section id="produk" class="container">
+        <h2 class="section-title">Produk Unggulan</h2>
+        <p class="section-subtitle">Pilihan aroma cincau bubuk dengan kualitas terbaik, cocok untuk minuman, dessert, dan berbagai kreasi kuliner Anda.</p>
+
+        <div class="produk-grid">
+            <!-- Produk 1 -->
+            <div class="produk-card">
+                <div class="produk-img">
+                    🌿
+                    <span class="badge">Best Seller</span>
+                </div>
+                <div class="produk-body">
+                    <h3>Aroma Cincau Original</h3>
+                    <p class="deskripsi">Bubuk aroma cincau hitam murni tanpa campuran. Aroma khas dan pekat, cocok untuk minuman tradisional.</p>
+                    <div class="harga">Rp 25.000 <small>/ sachet</small></div>
+                    <div class="pilihan">📦 Tersedia: Sachet 20g, 50g, 100g</div>
+                    <button class="btn-produk">Pesan Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="produk-card">
+                <div class="produk-img">
+                    🍃
+                    <span class="badge">Premium</span>
+                </div>
+                <div class="produk-body">
+                    <h3>Aroma Cincau Premium</h3>
+                    <p class="deskripsi">Daun cincau hitam pilihan dari dataran tinggi. Aroma lebih lembut dan elegan, cocok untuk kafe & restoran.</p>
+                    <div class="harga">Rp 45.000 <small>/ sachet</small></div>
+                    <div class="pilihan">📦 Tersedia: Sachet 50g, 100g, 250g</div>
+                    <button class="btn-produk">Pesan Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="produk-card">
+                <div class="produk-img">
+                    🧉
+                    <span class="badge">Hemat</span>
+                </div>
+                <div class="produk-body">
+                    <h3>Aroma Cincau Ekonomis</h3>
+                    <p class="deskripsi">Pilihan tepat untuk usaha minuman. Kualitas tetap terjaga dengan harga lebih terjangkau.</p>
+                    <div class="harga">Rp 15.000 <small>/ sachet</small></div>
+                    <div class="pilihan">📦 Tersedia: Sachet 20g, 50g</div>
+                    <button class="btn-produk">Pesan Sekarang</button>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="produk-card">
+                <div class="produk-img">
+                    🎁
+                    <span class="badge">Bundle</span>
+                </div>
+                <div class="produk-body">
+                    <h3>Paket Usaha Cincau</h3>
+                    <p class="deskripsi">Paket lengkap berisi bubuk aroma cincau, resep, dan panduan usaha. Cocok untuk memulai bisnis minuman.</p>
+                    <div class="harga">Rp 150.000 <small>/ paket</small></div>
+                    <div class="pilihan">📦 Isi: 5 sachet @100g + bonus</div>
+                    <button class="btn-produk">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TABEL UKURAN ===== -->
+    <section id="ukuran" class="container">
+        <h2 class="section-title">Pilihan Ukuran</h2>
+        <p class="section-subtitle">Tersedia berbagai ukuran untuk kebutuhan rumah tangga, usaha kecil, hingga industri. Semakin besar ukuran, semakin hemat!</p>
+
+        <div class="size-section">
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>Ukuran</th>
+                        <th>Berat</th>
+                        <th>Perkiraan Pemakaian</th>
+                        <th>Harga</th>
+                        <th>Stok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sachet Mini</strong></td>
+                        <td>10 gram</td>
+                        <td>± 5–8 porsi</td>
+                        <td class="harga-cell">Rp 8.000</td>
+                        <td><span class="stok stok-tersedia">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sachet Kecil</strong></td>
+                        <td>20 gram</td>
+                        <td>± 10–15 porsi</td>
+                        <td class="harga-cell">Rp 15.000</td>
+                        <td><span class="stok stok-tersedia">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sachet Sedang</strong></td>
+                        <td>50 gram</td>
+                        <td>± 25–35 porsi</td>
+                        <td class="harga-cell">Rp 25.000</td>
+                        <td><span class="stok stok-tersedia">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sachet Besar</strong></td>
+                        <td>100 gram</td>
+                        <td>± 50–70 porsi</td>
+                        <td class="harga-cell">Rp 45.000</td>
+                        <td><span class="stok stok-tersedia">Tersedia</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemasan Usaha</strong></td>
+                        <td>250 gram</td>
+                        <td>± 125–175 porsi</td>
+                        <td class="harga-cell">Rp 95.000</td>
+                        <td><span class="stok stok-terbatas">Terbatas</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemasan Grosir</strong></td>
+                        <td>500 gram</td>
+                        <td>± 250–350 porsi</td>
+                        <td class="harga-cell">Rp 175.000</td>
+                        <td><span class="stok stok-terbatas">Terbatas</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemasan Industri</strong></td>
+                        <td>1 kilogram</td>
+                        <td>± 500–700 porsi</td>
+                        <td class="harga-cell">Rp 320.000</td>
+                        <td><span class="stok stok-habis">Habis</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== BENTUK KEMASAN ===== -->
+    <section id="kemasan" class="container">
+        <h2 class="section-title">Bentuk Kemasan</h2>
+        <p class="section-subtitle">Kami menyediakan berbagai bentuk kemasan yang unik dan menarik, cocok untuk segala kalangan — dari anak muda hingga pelaku usaha.</p>
+
+        <div class="kemasan-grid">
+            <div class="kemasan-card">
+                <span class="ikon">📦</span>
+                <h4>Kemasan Sachet</h4>
+                <p>Praktis dan higienis, sekali pakai. Cocok untuk travelling dan konsumsi pribadi.</p>
+                <span class="tag">Praktis</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">🫙</span>
+                <h4>Kemasan Jar Kaca</h4>
+                <p>Tampilan premium dan elegan. Cocok untuk hadiah dan display di kafe.</p>
+                <span class="tag">Premium</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">🥫</span>
+                <h4>Kemasan Kaleng</h4>
+                <p>Awet dan tahan lama. Melindungi aroma cincau dari cahaya dan udara.</p>
+                <span class="tag">Tahan Lama</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">🎁</span>
+                <h4>Kemasan Gift Box</h4>
+                <p>Kotak eksklusif dengan desain menarik. Sempurna untuk hampers dan oleh-oleh.</p>
+                <span class="tag">Eksklusif</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">🧴</span>
+                <h4>Kemasan Botol</h4>
+                <p>Botol plastik food grade dengan tutup rapat. Mudah dituang dan disimpan.</p>
+                <span class="tag">Fungsional</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">📮</span>
+                <h4>Kemasan Standing Pouch</h4>
+                <p>Kemasan modern dengan zipper. Ramah lingkungan dan mudah dibawa.</p>
+                <span class="tag">Modern</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">🧺</span>
+                <h4>Kemasan Anyaman</h4>
+                <p>Kemasan tradisional dari anyaman bambu. Nuansa etnik dan alami.</p>
+                <span class="tag">Etnik</span>
+            </div>
+
+            <div class="kemasan-card">
+                <span class="ikon">📦</span>
+                <h4>Kemasan Karton</h4>
+                <p>Untuk pembelian grosir dan industri. Kuat dan dapat didaur ulang.</p>
+                <span class="tag">Grosir</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEUNGGULAN ===== -->
+    <section id="keunggulan" class="container">
+        <h2 class="section-title">Mengapa CincauKu?</h2>
+        <p class="section-subtitle">Kami berkomitmen memberikan produk terbaik dari alam untuk Anda.</p>
+
+        <div class="keunggulan-grid">
+            <div class="keunggulan-item">
+                <span class="ikon">🌱</span>
+                <h4>100% Alami</h4>
+                <p>Terbuat dari daun cincau hitam asli tanpa bahan kimia tambahan.</p>
+            </div>
+            <div class="keunggulan-item">
+                <span class="ikon">🏆</span>
+                <h4>Kualitas Premium</h4>
+                <p>Daun pilihan yang dikeringkan dengan metode tradisional modern.</p>
+            </div>
+            <div class="keunggulan-item">
+                <span class="ikon">💰</span>
+                <h4>Harga Bersaing</h4>
+                <p>Tersedia berbagai ukuran sesuai budget, dari eceran hingga grosir.</p>
+            </div>
+            <div class="keunggulan-item">
+                <span class="ikon">🚚</span>
+                <h4>Pengiriman Cepat</h4>
+                <p>Dikirim ke seluruh Indonesia dengan packing aman dan rapi.</p>
+            </div>
+            <div class="keunggulan-item">
+                <span class="ikon">🎨</span>
+                <h4>Kemasan Menarik</h4>
+                <p>Desain kemasan hijau kecoklatan yang natural dan eye-catching.</p>
+            </div>
+            <div class="keunggulan-item">
+                <span class="ikon">🤝</span>
+                <h4>Pelayanan Ramah</h4>
+                <p>Tim kami siap membantu Anda memilih produk yang tepat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA / KONTAK ===== -->
+    <section id="kontak" class="container">
+        <div class="cta-section">
+            <h2>Siap Mencoba Aroma Cincau Bubuk?</h2>
+            <p>Pesan sekarang dan rasakan sensasi aroma cincau hitam alami dalam setiap sajian. Tersedia berbagai ukuran dan kemasan untuk segala kebutuhan.</p>
+            <a href="#" class="btn">Hubungi Kami</a>
+
+            <div class="kontak-info">
+                <div>📞 0812-3456-7890</div>
+                <div>✉️ info@cincauku.id</div>
+                <div>📍 Jl. Cincau No. 123, Indonesia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>🌿 CincauKu</h4>
+                    <p>Produsen aroma cincau bubuk alami dari daun cincau hitam pilihan. Menghadirkan cita rasa tradisional dalam kemasan modern.</p>
+                </div>
+                <div>
+                    <h4>Produk</h4>
+                    <ul>
+                        <li><a href="#produk">Aroma Cincau Original</a></li>
+                        <li><a href="#produk">Aroma Cincau Premium</a></li>
+                        <li><a href="#produk">Paket Usaha</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Informasi</h4>
+                    <ul>
+                        <li><a href="#ukuran">Daftar Ukuran</a></li>
+                        <li><a href="#kemasan">Bentuk Kemasan</a></li>
+                        <li><a href="#keunggulan">Keunggulan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li>📞 0812-3456-7890</li>
+                        <li>✉️ info@cincauku.id</li>
+                        <li>📍 Jl. Cincau No. 123</li>
+                    </ul>
+               
